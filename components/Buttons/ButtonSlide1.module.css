@@ -1,0 +1,19 @@
+.bt1 {
+    align-self: center;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    height: 50%;
+    width: 130px;
+    outline: none;
+    background-color: #2F2D2E;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 0px 0px #C8C2AE;
+    transition: ease-in 0.3s;
+}
+
+.bt1:hover {
+    transition: ease-out 0.3s;
+    box-shadow: inset 130px 0px 0px 0px #C8C2AE;
+    color: #2F2D2E;
+}

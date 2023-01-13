@@ -1,0 +1,10 @@
+.container {
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    background-color: rgb(223, 209, 249);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}

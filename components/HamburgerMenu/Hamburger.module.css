@@ -1,0 +1,97 @@
+.Container {
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
+}
+
+.ButContainer {
+    transform: scale(75%);
+    z-index: 1;
+}
+
+.btn6 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transition-duration: 0.5s;
+    align-self: center;
+    z-index: 1;
+    margin-left: 30px;
+}
+
+.btn6 .icon {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: 8px;
+    width: 60px;
+    top: 30px;
+    background-color: rgb(11, 11, 11);
+    border-radius: 4px;
+}
+
+.btn6 .icon:before {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background-color: rgb(11, 11, 11);
+    ;
+    content: "";
+    top: -20px;
+    border-radius: 4px;
+}
+
+.btn6 .icon:after {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background-color: rgb(11, 11, 11);
+    content: "";
+    top: 20px;
+    border-radius: 4px;
+}
+
+.btn6.open .icon {
+    transition: 0.5s;
+}
+
+.btn6.open .icon:before {
+    transform: rotateZ(-45deg) scaleX(0.75) translate(-20px, -6px);
+}
+
+.btn6.open .icon:after {
+    transform: rotateZ(45deg) scaleX(0.75) translate(-20px, 6px);
+}
+
+.btn6:hover {
+    cursor: pointer;
+}
+
+/* right side panel */
+
+.panel_wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 35em;
+    transform: translateX(100%);
+    transition: .3s ease-out;
+}
+
+.panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ddd;
+    color: #eee;
+    overflow: auto;
+    padding: 1em;
+}
+
+.open_panel {
+    transform: translate(0%);
+}
