@@ -10,6 +10,8 @@ import ListView from "../components/ListView";
 import Login from "../components/Buttons/ButtonSlide1";
 import "../components/Product/ProductViewContainer"
 import ProductViewContainer from "../components/Product/ProductViewContainer";
+import Tens from "../components/TensorflowEditor";
+import TensorflowEditor from "../components/TensorflowEditor";
 const Home = () => {
   return (
     <>
@@ -22,11 +24,9 @@ const Home = () => {
           <h1 style={{ fontSize: "40px", alignSelf: "start" }}>ML Info</h1>
           <MenuLoginHandler />
         </div>
-        <ProductViewContainer>
-
-        </ProductViewContainer>
+        <ProductViewContainer/>
         <div className={index__style.footer}>
-          <Link href="/about/about">
+          <Link href="/about/">
             <a> About</a>
           </Link>
         </div>
