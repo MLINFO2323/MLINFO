@@ -9,14 +9,28 @@ function TensorFlowEditor() {
 
   function handleEditorDidMount(editor, monaco) {
     editorRef.current = editor; 
+    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+      target: monaco.languages.typescript.ScriptTarget.ES2016,
+      allowNonTsExtensions: true,
+      moduleResolution: monaco.languages.typescript.ModuleResolutionKind.NodeJs,
+      module: monaco.languages.typescript.ModuleKind.CommonJS,
+      noEmit: true,
+      typeRoots: ["node_modules/@types","@tensorflow"]
+    });
+    // todo make autocomple for tf.
+
+    monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+        noSemanticValidation: false,
+        noSyntaxValidation: false
+    })
+
   }
   
   function runCode() {
     const tf = require('@tensorflow/tfjs');
     editorRef.current.updateOptions({fontFamily: 'consolas'});
     console.log(eval(editorRef.current.getValue()))
-    let editor:me.editor.ICodeEditor = editorRef.current
-    editor.setModel()
+    
   }
   let defaultCode = `
   
