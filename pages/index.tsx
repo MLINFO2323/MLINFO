@@ -10,14 +10,18 @@ import ListView from "../components/ListView";
 import Login from "../components/Buttons/ButtonSlide1";
 import "../components/Product/ProductViewContainer"
 import ProductViewContainer from "../components/Product/ProductViewContainer";
-import Tens from "../components/TensorflowEditor";
-import TensorflowEditor from "../components/TensorflowEditor";
-const Home = () => {
+import ScrapeDatasetNames from "./Scraper"
+export function Home({datasets}) {
+  console.log(datasets)
   return (
     <>
       <Head>
         <title>ML Info</title>
       </Head>
+      
+      {/* <ul>
+        {JSON.parse(datasets).map((ds)=><li>{ds.toString()}</li>)}
+      </ul> */}
 
       <div className={index__style.background}>
         <div className={index__style.navbar}>
@@ -34,4 +38,16 @@ const Home = () => {
     </>
   );
 };
+
+// This function gets called at build time
+export async function getStaticProps() {
+  
+  let datasets = JSON.stringify(await ScrapeDatasetNames())
+  return {
+    props: {
+      datasets
+    },
+  }
+}
+
 export default Home;
